@@ -1,0 +1,57 @@
+{%  extends 'nav.html' %}
+{% block title %}
+Flack - Home
+{% endblock title %}
+
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+		  <div class="alert alert-warning alert-dismissible" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			{{message}}
+		  </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
+
+    <h2>Welcome back, {{ username }}!</h2>
+
+    <h2>Channels</h2>
+    <div class="create_channel">
+    <form method="post">
+        <div class="form-group">
+    <label for="create_channel">Create a channel</label>
+        <input type="text" class="form-control" name="channel_name" id="create_channel" placeholder="Enter a channel name here!">
+            <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="channels">
+    <h3>Existing Channels</h3>
+    <table class="table">
+        <thead>
+        <tr>
+        <th scope="col">Channel name</th>
+        <th scope="col">User Count</th>
+        <th scope="col">Message Count</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        {%  for row in channel_list %}
+        <th><a href="{{ url_for('channel', channel_id = row['channel_name'])  }}">{{ row['channel_name'] }}</a></th>
+            <th> {{ row['user_count'] }}</th>
+            <th> {{  row['message_count'] }}</th>
+        </tr>
+        {%  endfor %}
+        </tbody>
+    </table>
+
+    </div>
+
+
+{%  endblock content %}
