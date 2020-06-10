@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="{{ url_for('home') }}">
+    <img src="../static/flack.svg" width="30" height="30" class="d-inline-block align-top" alt="Flack">
+    Flack
+  </a>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{{ url_for('logout') }}"><img src="../static/logout.png" width="30" height="30 alt=logout">Logout</a></li>
+    </ul>
+</nav>
+
+
+{% endblock nav %}
