@@ -1,4 +1,4 @@
-CS50W Project 2 - Flask
+CS50W Project 2 - Flackord  
 
 A simple application that allows two or more users to create channels and chat with each other.
 
