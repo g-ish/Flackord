@@ -1,0 +1,75 @@
+html, body {
+    height: 100%;
+}
+
+.fill {
+    min-height: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.navbar {
+    background-color: #37393F;
+    color: #FFFFFF;
+}
+
+.row {
+    height: 90%;
+    width: 100%;
+}
+
+#chat_box {
+    background-color: #37393F;
+    color: #FFFFFF;
+    overflow-y: auto;
+    width: 90%;
+    height: 100%;
+
+}
+#menu_list{
+    background-color: #2F3136;
+    color: #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    height: 100%;
+}
+
+.row {
+    height: 100%;
+    position: fixed;
+}
+
+#message_box {
+    background-color: #41444B;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 50%;
+}
+
+#message_blocker {
+    height: 100px;
+    width: inherit;
+    float: bottom;
+}
+
+#message {
+    width: 85%;
+    margin-left: 10px;
+}
+#message_button {
+    float: right;
+    margin: 0px 10px 0px 10px;
+}
+#chat_messages {
+    margin-left: 15px;
+}
+.list-group-item {
+    background-color: rgba(0,0,0,0);
+    border: none;
+    border-bottom: #2F3136 solid 1px;
+    width: 100%;
+}
+
+

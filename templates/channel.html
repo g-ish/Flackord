@@ -1,24 +1,47 @@
 {%  extends 'nav.html' %}
+    {%  block title %}
+        Flack - {{ channel_name }}
+    {%  endblock title %}
 
 {%  block content %}
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
               <script src="../static/index.js"></script>
 
-    <h3>{{ channel_id }}</h3>
-    <li id="messages"></li>
+
+    <h3 style="font-weight: 700">{{ channel_name }}</h3>
+
     <div class="row">
-    <div class="col-8" id="chat_box">
-        (( messages go here ))
-        <div id="enter message">
-            {{ username }}
-            <input type="text" placeholder="Message for {{ channel_id }}" data-message="">
-            <button type="submit">Send</button>
+        <!-- Menu (Left) -->
+        <div class="col-3" id="menu_list">
+        <h4>Menu</h4>
+            <ul><button type="button" class="btn btn-danger" action="#" id="leave" name="leave">Leave Channel</button></ul>
+        <ul>Additional Stuff goes here</ul>
         </div>
+
+     <!-- Chat box (Center) -->
+    <div class="col-9" id="chat_box">
+        <ul class="list-group list-group-flush" id="chat_messages">
+            {%  for row in prev_messages %}
+            <div style="display:inline" class="list-group-item"><span style="font-weight: 600; font-size: 1.1em; color: #326390"> {{ row['username'] }} - </span>{{ row['message']  }}
+             <span style="font-size: 0.75em; color: #999DA8">{{ row['timestamp'] }}</span></div>
+            {%  endfor %}
+
+
+
+        </ul>
+            <!-- 'reserves' space to stop messages appearing behind message submission area -->
+        <div id="message_blocker"></div>
+
+
+        <!-- Message submission area -->
+        <form id="send_message" action="#" class="form-inline">
+                        <div id="message_box" class="form-group" >
+            <input type="text" placeholder="{{ username }} - Message for {{ channel_name }}" name="message" id="message" class="form-control">
+            <button type="submit" id="message_button" class="btn btn-light">Send</button>
+                        </div>
+            </form>
     </div>
-    <div class="col-4" id="user_list">
-        user box test
-        {{ username }}
-    </div>
+
     </div>
 
 {%  endblock content %}

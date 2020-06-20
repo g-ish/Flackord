@@ -36,16 +36,12 @@ Flack - Home
         <thead>
         <tr>
         <th scope="col">Channel name</th>
-        <th scope="col">User Count</th>
-        <th scope="col">Message Count</th>
         </tr>
         </thead>
         <tbody>
         <tr>
         {%  for row in channel_list %}
-        <th><a href="{{ url_for('channel', channel_id = row['channel_name'])  }}">{{ row['channel_name'] }}</a></th>
-            <th> {{ row['user_count'] }}</th>
-            <th> {{  row['message_count'] }}</th>
+        <th><a href="{{ url_for('channel', channel_name = row) }}">{{ row }}</a></th>
         </tr>
         {%  endfor %}
         </tbody>

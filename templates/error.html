@@ -1,0 +1,16 @@
+{%  extends 'nav.html' %}
+
+{%  block title %}
+    Flack - Error!
+{%  endblock %}
+
+{%  block content %}
+    <h3>Oops, there's an error!</h3>
+
+    <div id="error">
+        <h4>{{ error }} </h4>
+
+        <h4><a href="{{ url_for('home') }}">Try creating the channel first</a></h4>
+
+    </div>
+{%  endblock %}
