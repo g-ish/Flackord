@@ -21,7 +21,6 @@ Usage:
  - Chat to other users.
  - Send gifs to each other using giphy. 
  
- Notes:
+ Notes / Known Issues:
   - Giphy images not retained after leaving channel. 
   - Styling with images sometimes hidden behind 'enter message' boxes. 
-
