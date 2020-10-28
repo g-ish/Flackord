@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById('giphy').onclick = function () {
             const gif = prompt("Topic", "Random");
+
             console.log('getting a gif, topic: ' + gif)
             socket.emit('handle_gif', {"message": gif});
             return false;
@@ -49,8 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
         chat_box.scrollBy(0, 100)
     });
 
-    socket.on('relay giphy', data =>{
+    socket.on('relay giphy'     , data =>{
         console.log('creating a giphy div')
+        console.log(data)
         const message = document.createElement('div');
         message.style.display = 'inline';
         message.className = 'list-group-item';

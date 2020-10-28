@@ -117,6 +117,7 @@ def channel_direct():
 
 @socketio.on('send_message')
 def handle_message(data):
+    print(data)
     message = data['message']
     username = session['username']
     timestamp = datetime.now().strftime("%Y-%m-%d, %H:%M")
@@ -134,6 +135,7 @@ def handle_message(data):
 def handle_gif(data):
 
     query = data['message']
+    query = query.strip()
 
     with urllib.request.urlopen("http://api.giphy.com/v1/gifs/search?q=" + query + "&api_key=" + giphy_key + "&limit=1&offset=0&rating=G&lang=en") as url:
         result = url.read()
